@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import numpy as np
+from PIL import Image
 
 
 def HOGFeatures(img, numGrad=9, cellSize=(16, 16), blockSize=(3, 3), normalise=False):
@@ -117,3 +118,13 @@ def HOGFeatures(img, numGrad=9, cellSize=(16, 16), blockSize=(3, 3), normalise=F
         hogFea[rid] = hogFea[rid] / denominator
 
     return hogFea.flatten()
+
+
+if __name__ == '__main__':
+    filename = 'data/1.jpg'
+    img = Image.open(filename)
+    img = img.convert('L')
+    im = np.array(img)
+    hog_feat = HOGFeatures(im)
+    print(hog_feat)
+    print(len(hog_feat))

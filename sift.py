@@ -74,7 +74,7 @@ def plot_features(img, locs, circle=False):
 
 
 if __name__ == '__main__':
-    filename = '25.jpg'
+    filename = 'data/1.jpg'
     img = Image.open(filename)
     img = img.convert('L')
     im = np.array(img)

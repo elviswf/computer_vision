@@ -45,7 +45,7 @@ def GISTFeatures(filename, params='-nblocks 4 -orientationsPerScale 8,8,4', tmpf
 
 
 if __name__ == '__main__':
-    filename = 'bird.jpg'
+    filename = 'data/1.jpg'
     gist_fea = GISTFeatures(filename)
     print(gist_fea)
     print(len(gist_fea))

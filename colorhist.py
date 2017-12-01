@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import numpy as np
+from PIL import Image
 
 
 def colorHistogram(img, nRange=4, window_sz=(5, 5)):
@@ -32,3 +33,12 @@ def colorHistogram(img, nRange=4, window_sz=(5, 5)):
                     res[w_rid, w_cid, index] += 1
             res[w_rid, w_cid] /= nElem_per_win
     return res.flatten()
+
+
+if __name__ == '__main__':
+    filename = 'data/1.jpg'
+    img = Image.open(filename)
+    im = np.array(img)
+    chist_fea = colorHistogram(im)
+    print(chist_fea)
+    print(len(chist_fea))
